@@ -25,7 +25,7 @@ Na seção **Releases**, baixe o Soundeck para Windows e, se quiser controlar o 
 
 ### Soundeck para Windows
 
-1. Baixe `Soundeck.exe` na versão desejada.
+1. Baixe o [![Download Soundeck.exe](https://img.shields.io/badge/Download-Soundeck.exe-black?style=flat-square)](https://github.com/skaralysk/soundeck/releases/download/App/Soundeck.exe) na versão desejada.
 2. Abra o arquivo para iniciar o Soundeck.
 3. O ícone do aplicativo fica na área de notificação do Windows. Abra as configurações por esse ícone ou pela barra lateral.
 
@@ -33,7 +33,7 @@ O Soundeck não precisa da extensão para controlar o volume por aplicativo. Sem
 
 ### Firefox
 
-1. Baixe `Soundeck-Firefox-Extension.xpi` da mesma versão do aplicativo.
+1. Baixe [`Soundeck-Firefox-Extension.xpi`](https://github.com/skaralysk/soundeck/releases/download/App/Soundeck-Firefox-Extension.xpi) da mesma versão do aplicativo.
 2. No Firefox, abra `about:debugging#/runtime/this-firefox`.
 3. Clique em **Carregar extensão temporária…** e selecione o arquivo `.xpi`.
 4. Mantenha o Soundeck aberto e recarregue as abas com áudio.
@@ -42,7 +42,7 @@ O carregamento por `about:debugging` é temporário e precisa ser repetido quand
 
 ### Chrome, Edge, Brave, Opera e Vivaldi
 
-1. Baixe `Soundeck-Chromium-Extension.zip` da mesma versão do aplicativo.
+1. Baixe [`Soundeck-Chromium-Extension.zip`](https://github.com/skaralysk/soundeck/releases/download/App/Soundeck-Chromium-Extension.zip) da mesma versão do aplicativo.
 2. Extraia o arquivo para uma pasta que não será movida ou apagada.
 3. Abra a página de extensões do navegador, por exemplo `chrome://extensions` ou `edge://extensions`.
 4. Ative o **Modo do desenvolvedor** e escolha **Carregar sem compactação**.
