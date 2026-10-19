@@ -1,9 +1,14 @@
+<p align="center">
+  <img src="https://i.imgur.com/ZVHG3hf.png" alt="Logo" width="300">
+</p>
 # Soundeck
 
 **Controle o áudio dos seus aplicativos e abas em uma barra lateral para Windows.**
 
 O Soundeck mostra os programas que estão reproduzindo som, permite ajustar ou silenciar cada sessão e pode recolher a barra quando não está em uso. Instale a extensão opcional do navegador para identificar abas audíveis pelo título e favicon e controlar individualmente mídias compatíveis.
-
+<p align="center">
+  <img src="https://i.imgur.com/zv352H6.png" alt="Logo" width="600">
+</p>
 ## Recursos
 
 - Mixer nativo do Windows para sessões de áudio por aplicativo.
