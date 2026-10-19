@@ -16,7 +16,7 @@ O Soundeck mostra os programas que estão reproduzindo som, permite ajustar ou s
 
 ## Baixar e instalar
 
-Baixe o executável e a extensão correspondente na seção **Releases** deste repositório. Use sempre o aplicativo e a extensão da mesma versão.
+Na seção **Releases**, baixe o Soundeck para Windows e, se quiser controlar o áudio por aba, a extensão do seu navegador. Use sempre o aplicativo e a extensão da mesma versão.
 
 ### Soundeck para Windows
 
@@ -68,20 +68,6 @@ Os atalhos podem ser configurados para combinações como `Control+Alt+1`, `Cont
 ### Erro 403 entre a extensão e o aplicativo
 
 Confira se o Soundeck e a extensão são da mesma versão. Feche instâncias antigas do Soundeck, remova a extensão anterior, instale os dois arquivos da mesma versão e reinicie o navegador.
-
-## Executar a partir do código-fonte
-
-Requisitos: Windows 10 ou 11 e Python 3.9 ou superior.
-
-```bat
-python -m venv .venv
-.venv\Scripts\python.exe -m pip install -r requirements.txt
-.venv\Scripts\python.exe app.py
-```
-
-## Gerar o executável e as extensões
-
-No Windows, execute `build.bat`. O script instala as dependências, gera `dist\Soundeck.exe` e empacota as extensões do Firefox e Chromium na pasta `dist`.
 
 ## Configuração
 
