@@ -19,6 +19,13 @@ O Soundeck mostra os programas que estão reproduzindo som, permite ajustar ou s
 - Pulso visual suave na borda quando a barra está recolhida.
 - Configurações salvas localmente no Windows.
 
+<p align="center">
+<img src="https://i.imgur.com/1O5RxxS.jpeg" alt="img" width="600">
+</p>
+<p align="center">
+<img src="https://i.imgur.com/kob44lA.jpeg" alt="img1" width="600">
+</p>
+
 ## Baixar e instalar
 
 Na seção **Releases**, baixe o Soundeck para Windows e, se quiser controlar o áudio por aba, a extensão do seu navegador. Use sempre o aplicativo e a extensão da mesma versão.
