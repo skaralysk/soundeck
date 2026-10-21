@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoundDeck - Windows App Volume Control</title>
+  <meta name="description"
+    content="Controle o volume de cada aplicativo individualmente no Windows com elegância e precisão." />
+  <meta property="og:title" content="SoundDeck - Windows App Volume Control" />
+  <meta property="og:description"
+    content="Controle o volume de cada aplicativo individualmente no Windows com elegância e precisão." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Folha de estilo Vanilla CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="app-container">
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: APRESENTAÇÃO DO APP (Fundo Champanhe / Dourado #D8C98B)        -->
+    <!-- ========================================================================= -->
+    <section class="hero-section">
+      <!-- Círculos concêntricos decorativos de fundo -->
+      <div class="concentric-circles-wrapper" aria-hidden="true">
+        <div class="circle-outer">
+          <div class="circle-middle">
+            <div class="circle-inner-ring"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cabeçalho (Logo + Seletor de Idioma + Redes Sociais) -->
+      <header class="site-header">
+        <!-- Logo -->
+        <div class="logo-wrapper">
+          <img src="https://i.imgur.com/ScliWCm.png" alt="SOUNDECK" class="logo-img" referrerpolicy="no-referrer" />
+        </div>
+
+        <!-- Controles: Idioma + Links Sociais -->
+        <div class="header-controls">
+          <!-- Seletor de Idiomas Minimalista -->
+          <div class="lang-switcher" role="group" aria-label="Seletor de idioma">
+            <span class="lang-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+              </svg>
+            </span>
+            <button type="button" class="lang-btn active" data-lang="pt" aria-label="Português">
+              PT
+            </button>
+            <button type="button" class="lang-btn" data-lang="en" aria-label="English">
+              EN
+            </button>
+            <button type="button" class="lang-btn" data-lang="es" aria-label="Español">
+              ES
+            </button>
+          </div>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-link" title="Instagram"
+            aria-label="Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/skaralysk/soundeck" target="_blank" rel="noreferrer" class="social-link"
+            title="GitHub" aria-label="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Palco Central Hero -->
+      <div class="hero-stage">
+        <!-- Título Principal -->
+        <div class="hero-title-box">
+          <h1 class="hero-heading">
+            <span class="hero-title-white" data-i18n="heroTitle1">Controle o áudio dos seus aplicativos</span>
+            <span class="hero-title-black" data-i18n="heroTitle2">em um só lugar.</span>
+          </h1>
+        </div>
+
+        <!-- SoundDeck Floating Glass Capsule Dock -->
+        <div class="dock-outer-wrapper">
+          <div class="dock-pill">
+            <!-- Botão Esquerdo (Grip Vertical / Restaurar) -->
+            <button type="button" id="btn-reset-grip" class="dock-side-btn" title="Restaurar volumes padrão"
+              aria-label="Restaurar volumes">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </button>
+
+            <!-- Controles Knobs Circulares dos Aplicativos -->
+            <div class="dock-knobs-container">
+              <!-- 1. WHATSAPP -->
+              <div class="knob-item" id="knob-whatsapp" title="WhatsApp: 32%">
+                <div class="dial-container">
+                  <svg class="dial-svg" width="68" height="68" viewBox="0 0 68 68">
+                    <circle cx="34" cy="34" r="31.75" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="4.5">
+                    </circle>
+                    <circle class="progress-arc" cx="34" cy="34" r="31.75" fill="none" stroke="#25D366"
+                      stroke-width="4.5" stroke-dasharray="199.49" stroke-dashoffset="135.65" stroke-linecap="round">
+                    </circle>
+                  </svg>
+
+                  <button type="button" class="center-icon-btn" aria-label="Mudo WhatsApp">
+                    <div class="icon-wrapper">
+                      <!-- WhatsApp Icon -->
+                      <svg class="app-icon-svg" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" fill="#25D366"></circle>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.5 12c0 3.04-2.46 5.5-5.5 5.5-0.97 0-1.88-0.25-2.67-0.7L6.5 17.5l0.72-2.73A5.46 5.46 0 0 1 6.5 12C6.5 8.96 8.96 6.5 12 6.5s5.5 2.46 5.5 5.5zm-3.23 1.8c-.18.49-.9 1-1.28 1.05-.36.05-.83.08-2.65-.67-2.18-.9-3.56-3.13-3.67-3.27-.11-.15-.88-1.18-.88-2.25 0-1.07.56-1.6.76-1.82.2-.22.44-.27.59-.27.15 0 .3 0 .43.01.14.01.33-.05.51.39.18.44.62 1.54.67 1.66.05.11.08.25.01.39-.07.15-.11.23-.22.36-.11.13-.23.29-.33.39-.11.11-.23.23-.1.45.13.22.58.95 1.25 1.54.85.76 1.58 1 1.8 1.11.22.11.36.09.49-.05.13-.15.56-.65.71-.88.15-.22.3-.18.51-.11.21.07 1.34.63 1.57.75.23.11.38.18.44.27.06.11.06.65-.12 1.14z"
+                          fill="white"></path>
+                      </svg>
+                    </div>
+                  </button>
+
+                  <div class="knob-glow-ring" style="background-color: #25D366;"></div>
+                </div>
+                <span class="knob-percent-label">32%</span>
+              </div>
+
+              <!-- 2. GOOGLE CHROME -->
+              <div class="knob-item" id="knob-chrome" title="Google Chrome: 81%">
+                <div class="dial-container">
+                  <svg class="dial-svg" width="68" height="68" viewBox="0 0 68 68">
+                    <defs>
+                      <linearGradient id="gradient-chrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#EA4335"></stop>
+                        <stop offset="50%" stop-color="#FBBC05"></stop>
+                        <stop offset="100%" stop-color="#34A853"></stop>
+                      </linearGradient>
+                    </defs>
+                    <circle cx="34" cy="34" r="31.75" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="4.5">
+                    </circle>
+                    <circle class="progress-arc" cx="34" cy="34" r="31.75" fill="none" stroke="url(#gradient-chrome)"
+                      stroke-width="4.5" stroke-dasharray="199.49" stroke-dashoffset="37.90" stroke-linecap="round">
+                    </circle>
+                  </svg>
+
+                  <button type="button" class="center-icon-btn" aria-label="Mudo Google Chrome">
+                    <div class="icon-wrapper">
+                      <!-- Chrome Icon -->
+                      <svg class="app-icon-svg" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M12 2C7.3 2 3.3 5.3 2.3 9.6L7.3 12.5C7.7 9.8 10 7.8 12.8 7.8H21.5C19.7 4.3 16.1 2 12 2Z"
+                          fill="#EA4335"></path>
+                        <path
+                          d="M21.5 7.8H12.8C10.7 7.8 9 9 8.1 10.7L3.1 2.1C5.5 0.8 8.2 0 11.2 0C17.4 0 22.5 4.8 23 11H17.2C16.8 9.2 15.2 7.8 13.2 7.8"
+                          transform="rotate(120 12 12)" fill="#34A853"></path>
+                        <path
+                          d="M21.5 7.8H12.8C10.7 7.8 9 9 8.1 10.7L3.1 2.1C5.5 0.8 8.2 0 11.2 0C17.4 0 22.5 4.8 23 11H17.2C16.8 9.2 15.2 7.8 13.2 7.8"
+                          transform="rotate(240 12 12)" fill="#FBBC05"></path>
+                        <circle cx="12" cy="12" r="5" fill="#FFFFFF"></circle>
+                        <circle cx="12" cy="12" r="3.6" fill="#4285F4"></circle>
+                      </svg>
+                    </div>
+                  </button>
+
+                  <div class="knob-glow-ring" style="background-color: #EA4335;"></div>
+                </div>
+                <span class="knob-percent-label">81%</span>
+              </div>
+
+              <!-- 3. SPOTIFY -->
+              <div class="knob-item" id="knob-spotify" title="Spotify: 40%">
+                <div class="dial-container">
+                  <svg class="dial-svg" width="68" height="68" viewBox="0 0 68 68">
+                    <circle cx="34" cy="34" r="31.75" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="4.5">
+                    </circle>
+                    <circle class="progress-arc" cx="34" cy="34" r="31.75" fill="none" stroke="#1DB954"
+                      stroke-width="4.5" stroke-dasharray="199.49" stroke-dashoffset="119.69" stroke-linecap="round">
+                    </circle>
+                  </svg>
+
+                  <button type="button" class="center-icon-btn" aria-label="Mudo Spotify">
+                    <div class="icon-wrapper">
+                      <!-- Spotify Icon -->
+                      <svg class="app-icon-svg" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" fill="#1DB954"></circle>
+                        <path
+                          d="M16.5 14.8c-.2.3-.5.4-.8.2-2.1-1.3-4.8-1.6-8-0.9-.3.1-.6-.1-.7-.4-.1-.3.1-.6.4-.7 3.5-.8 6.5-.5 8.9.9.2.2.3.6.2.9zm1-2.4c-.2.4-.7.5-1.1.3-2.4-1.5-6.1-1.9-9-1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.3-1 7.4-.6 10.2 1.1.4.3.5.7.4 1.1zm.1-2.5c-2.9-1.7-7.7-1.9-10.5-1-.4.1-1-.1-1.1-.6-.1-.4.1-1 .6-1.1 3.3-1 8.6-.8 11.9 1.2.4.2.5.8.3 1.2-.2.4-.8.5-1.2.3z"
+                          fill="#000000"></path>
+                      </svg>
+                    </div>
+                  </button>
+
+                  <div class="knob-glow-ring" style="background-color: #1DB954;"></div>
+                </div>
+                <span class="knob-percent-label">40%</span>
+              </div>
+
+              <!-- 4. YOUTUBE -->
+              <div class="knob-item" id="knob-youtube" title="YouTube: 40%">
+                <div class="dial-container">
+                  <svg class="dial-svg" width="68" height="68" viewBox="0 0 68 68">
+                    <circle cx="34" cy="34" r="31.75" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="4.5">
+                    </circle>
+                    <circle class="progress-arc" cx="34" cy="34" r="31.75" fill="none" stroke="#FF0000"
+                      stroke-width="4.5" stroke-dasharray="199.49" stroke-dashoffset="119.69" stroke-linecap="round">
+                    </circle>
+                  </svg>
+
+                  <button type="button" class="center-icon-btn" aria-label="Mudo YouTube">
+                    <div class="icon-wrapper">
+                      <!-- YouTube Icon -->
+                      <svg class="app-icon-svg" viewBox="0 0 24 24" fill="none">
+                        <rect x="2" y="4" width="20" height="16" rx="5" fill="#FF0000"></rect>
+                        <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="#FFFFFF"></path>
+                      </svg>
+                    </div>
+                  </button>
+
+                  <div class="knob-glow-ring" style="background-color: #FF0000;"></div>
+                </div>
+                <span class="knob-percent-label">40%</span>
+              </div>
+            </div>
+
+            <!-- Botão Direito (Engrenagem / Configurações / Reset) -->
+            <button type="button" id="btn-reset-gear" class="dock-side-btn btn-gear" title="SoundDeck"
+              aria-label="Configurações">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                </path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bloco do Botão de Download CTA -->
+        <div class="download-cta-block">
+          <button type="button" id="btn-download-main" class="download-btn" title="Download SoundDeck">
+            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span data-i18n="downloadBtn">Download</span>
+          </button>
+
+          <!-- Versão 1.4 -->
+          <p class="download-version-text" data-i18n="version">Version 1.4</p>
+
+          <!-- Para Windows -->
+          <p class="download-platform-text" data-i18n="forWindows">For Windows</p>
+
+          <!-- Logo do Windows Clicável -->
+          <button type="button" id="btn-download-windows" class="windows-logo-btn"
+            title="Download SoundDeck para Windows" aria-label="Download SoundDeck">
+            <svg class="windows-logo-svg" viewBox="0 0 88 88" fill="none">
+              <path d="M0 12.5L35.8 7.6V41.7H0V12.5Z" fill="currentColor"></path>
+              <path d="M40.8 6.9L87.8 0V41.7H40.8V6.9Z" fill="currentColor"></path>
+              <path d="M0 46.2H35.8V80.3L0 75.4V46.2Z" fill="currentColor"></path>
+              <path d="M40.8 46.2H87.8V87.9L40.8 81V46.2Z" fill="currentColor"></path>
+            </svg>
+          </button>
+
+          <!-- Screenshots / Miniaturas do App -->
+          <div class="app-screenshots-wrapper">
+            <button type="button" class="screenshot-thumb-btn" data-full-src="Soudeck-op.jpg" aria-label="Ampliar captura de tela 1 do SoundDeck">
+              <img src="Soudeck-op.jpg" alt="SoundDeck Preview 1" class="screenshot-thumb-img" loading="lazy" />
+              <div class="screenshot-zoom-overlay" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="zoom-icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+            </button>
+
+            <button type="button" class="screenshot-thumb-btn" data-full-src="Soudeck-op-1.jpg" aria-label="Ampliar captura de tela 2 do SoundDeck">
+              <img src="Soudeck-op-1.jpg" alt="SoundDeck Preview 2" class="screenshot-thumb-img" loading="lazy" />
+              <div class="screenshot-zoom-overlay" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="zoom-icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Texto de Apresentação Geral -->
+        <p class="hero-description" data-i18n="appDescription">
+          Controle o áudio dos seus aplicativos em um só lugar. O Soundeck organiza os controles em uma barra lateral
+          que pode ser movida e configurada. Instale a extensão do seu navegador para ajustar o volume de cada aba com
+          mídia compatível.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: COMO INSTALAR (Fundo Preto #000000)                             -->
+    <!-- ========================================================================= -->
+    <section class="install-section">
+      <div class="install-container">
+        <!-- Título da Seção -->
+        <div class="install-header">
+          <h2 class="install-title" data-i18n="howToInstallTitle">Como instalar</h2>
+        </div>
+
+        <!-- Lista de Passos -->
+        <div class="steps-list">
+          <!-- Passo 1 -->
+          <div class="step-item">
+            <span class="step-number">1.</span>
+            <p class="step-content" data-i18n="step1">Baixe e abra o Soundeck para Windows.</p>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class="step-item">
+            <span class="step-number">2.</span>
+            <p class="step-content" data-i18n="step2">
+              Baixe a extensão correspondente ao seu navegador. Use a extensão e o app da mesma versão.
+            </p>
+          </div>
+
+          <!-- Passo 3 -->
+          <div class="step-item">
+            <span class="step-number">3.</span>
+            <div class="step-content">
+              <p data-i18n="step3Title">Instale a extensão:</p>
+
+              <div class="step-sublist">
+                <!-- Firefox -->
+                <p>
+                  <strong class="strong-label" data-i18n="firefoxLabel">Firefox:</strong>
+                  <span data-i18n="firefoxStep">abra</span>
+                  <code class="code-badge code-badge-gold">about:debugging#/runtime/this-firefox</code>
+                  <span data-i18n="firefoxAction">, clique em Carregar extensão temporária… e selecione o arquivo</span>
+                  <code class="code-badge">.xpi</code>
+                  <span data-i18n="firefoxNote">. A instalação temporária precisa ser repetida após fechar o
+                    Firefox.</span>
+                  <a href="https://github.com/skaralysk/soundeck/releases/download/App/Soundeck-Firefox-Extension.rar"
+                    class="download-link" data-i18n="downloadZip" download>Baixar extensão compactada.</a>
+                </p>
+
+                <!-- Chromium -->
+                <p>
+                  <strong class="strong-label" data-i18n="chromiumLabel">Chrome, Edge e outros navegadores
+                    Chromium:</strong>
+                  <a href="https://github.com/skaralysk/soundeck/releases/download/App/Soundeck-Chromium-Extension.zip"
+                    class="download-link" data-i18n="downloadZip" download>Baixar extensão compactada,</a>
+                  <span data-i18n="chromiumExtract">extraia o arquivo</span>
+                  <code class="code-badge">.zip</code>
+                  <span data-i18n="chromiumOpen">, abra a página de extensões (</span>
+                  <code class="code-badge code-badge-gold">chrome://extensions</code>
+                  <span data-i18n="chromiumOr">ou</span>
+                  <code class="code-badge code-badge-gold">edge://extensions</code>
+                  <span data-i18n="chromiumDevMode">), ative o Modo do desenvolvedor e clique em</span>
+                  <em data-i18n="chromiumLoadUnpacked">Carregar sem compactação</em>
+                  <span data-i18n="chromiumSelect">. Selecione a pasta extraída.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Passo 4 -->
+          <div class="step-item">
+            <span class="step-number">4.</span>
+            <p class="step-content" data-i18n="step4">Deixe o Soundeck aberto e recarregue a aba que está reproduzindo
+              áudio.</p>
+          </div>
+        </div>
+
+        <!-- Nota / Disclaimer -->
+        <div class="disclaimer-box">
+          <p data-i18n="disclaimer">
+            Sem a extensão, o Soundeck controla o volume por aplicativo do Windows. Com ela, também pode controlar
+            individualmente mídias compatíveis em abas do navegador. Algumas páginas que usam áudio especial, como Web
+            Audio, podem não permitir o ajuste individual.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toast Flutuante de Notificação do Download -->
+    <div id="download-toast" class="toast-notice" style="display: none;">
+      <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <span id="toast-text">Download do SoundDeck-Setup-v1.4.exe iniciado!</span>
+    </div>
+
+    <!-- Modal Fullscreen para Imagens -->
+    <div id="image-modal" class="image-modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="image-modal-backdrop" id="modal-backdrop"></div>
+      <div class="image-modal-content">
+        <button type="button" class="image-modal-close" id="modal-close" aria-label="Fechar visualização">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <img id="modal-img" src="" alt="SoundDeck Screenshot em tamanho real" class="image-modal-img" />
+      </div>
+    </div>
+  </main>
+
+  <!-- Script Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>

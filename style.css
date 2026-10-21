@@ -1,0 +1,1085 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --color-gold-bg: #D8C98B;
+  --color-gold-accent: #DEC98A;
+  --color-black: #000000;
+  --color-dark-dock: rgba(0, 0, 0, 0.70);
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-black);
+  color: var(--color-zinc-100);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-black);
+  color: var(--color-zinc-100);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+::selection {
+  background-color: var(--color-black);
+  color: var(--color-gold-accent);
+}
+
+/* ========================================================================= */
+/* LAYOUT BASE                                                               */
+/* ========================================================================= */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-black);
+  color: var(--color-zinc-100);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ========================================================================= */
+/* SECTION 1: APRESENTAÇÃO HERO (DOURADA / #D8C98B)                         */
+/* ========================================================================= */
+.hero-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-gold-bg);
+  color: #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .hero-section {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Círculos concêntricos suaves no fundo da seção hero */
+.concentric-circles-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.circle-outer {
+  width: 660px;
+  height: 660px;
+  border-radius: 9999px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 640px) {
+  .circle-outer {
+    width: 840px;
+    height: 840px;
+  }
+}
+
+@media (min-width: 768px) {
+  .circle-outer {
+    width: 960px;
+    height: 960px;
+  }
+}
+
+.circle-middle {
+  width: 500px;
+  height: 500px;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.03);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .circle-middle {
+    width: 620px;
+    height: 620px;
+  }
+}
+
+@media (min-width: 768px) {
+  .circle-middle {
+    width: 720px;
+    height: 720px;
+  }
+}
+
+.circle-inner-ring {
+  width: 360px;
+  height: 360px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  opacity: 0.6;
+}
+
+@media (min-width: 640px) {
+  .circle-inner-ring {
+    width: 460px;
+    height: 460px;
+  }
+}
+
+/* ========================================================================= */
+/* HEADER                                                                    */
+/* ========================================================================= */
+.site-header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .site-header {
+    padding: 0 3rem;
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 2.25rem;
+  width: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .logo-img {
+    height: 2.75rem;
+  }
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #000;
+}
+
+@media (min-width: 640px) {
+  .header-controls {
+    gap: 1rem;
+  }
+}
+
+/* Seletor de Idiomas */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.10);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.lang-icon {
+  padding-left: 0.375rem;
+  padding-right: 0.25rem;
+  color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .lang-icon {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.lang-btn:hover {
+  color: #000;
+}
+
+.lang-btn.active {
+  background-color: #000;
+  color: var(--color-gold-accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+/* Links Sociais (Instagram, GitHub) */
+.social-link {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+@media (min-width: 640px) {
+  .social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.social-link:hover {
+  background-color: rgba(0, 0, 0, 0.10);
+}
+
+.social-link:active {
+  transform: scale(0.95);
+}
+
+.social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .social-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/* ========================================================================= */
+/* PALCO CENTRAL HERO                                                        */
+/* ========================================================================= */
+.hero-stage {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-stage {
+    padding-top: 3.5rem;
+  }
+}
+
+.hero-title-box {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  user-select: none;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .hero-title-box {
+    margin-bottom: 2rem;
+  }
+}
+
+.hero-heading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.375;
+}
+
+@media (min-width: 640px) {
+  .hero-heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-heading {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-heading {
+    font-size: 2.25rem;
+  }
+}
+
+.hero-title-white {
+  color: #fff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  margin-right: 0.5rem;
+  font-weight: 900;
+}
+
+.hero-title-black {
+  color: #000;
+  font-weight: 800;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .hero-title-black {
+    display: inline;
+  }
+}
+
+/* ========================================================================= */
+/* DOCK DE VIDRO INTERATIVO (SOUNDDECK CAPSULE)                              */
+/* ========================================================================= */
+.dock-outer-wrapper {
+  position: relative;
+  margin: 0.5rem 0;
+  background-color: rgba(0, 0, 0, 0.70);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 640px) {
+  .dock-outer-wrapper {
+    margin: 0.75rem 0;
+  }
+}
+
+.dock-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background-color: rgba(0, 0, 0, 0.70);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 9999px;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.85);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .dock-pill {
+    gap: 1.5rem;
+    padding: 1rem 1.75rem;
+  }
+}
+
+.dock-pill:hover {
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+.dock-side-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-zinc-400);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dock-side-btn:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dock-side-btn:active {
+  transform: scale(0.95);
+}
+
+.dock-side-btn.btn-gear:hover {
+  transform: rotate(45deg);
+}
+
+.dock-knobs-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .dock-knobs-container {
+    gap: 1.75rem;
+  }
+}
+
+/* ========================================================================= */
+/* CIRCULAR KNOB COMPONENT                                                   */
+/* ========================================================================= */
+.knob-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.dial-container {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  transition: transform 0.15s ease;
+  touch-action: none;
+}
+
+.dial-container:active {
+  cursor: grabbing;
+}
+
+.dial-container.dragging {
+  transform: scale(1.05);
+}
+
+.dial-container:hover:not(.dragging) {
+  transform: scale(1.02);
+}
+
+.dial-svg {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.progress-arc {
+  transition: stroke-dashoffset 0.075s ease;
+}
+
+.center-icon-btn {
+  z-index: 10;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(24, 24, 27, 0.90);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.center-icon-btn:hover {
+  background-color: var(--color-zinc-800);
+}
+
+.center-icon-btn:active {
+  transform: scale(0.95);
+}
+
+.center-icon-btn:focus-visible {
+  outline: 2px solid #fde047;
+}
+
+.app-icon-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 0.15s ease;
+}
+
+.knob-item:hover .app-icon-svg {
+  transform: scale(1.05);
+}
+
+.icon-wrapper-muted {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper-muted .app-icon-svg {
+  opacity: 0.35;
+}
+
+.mute-cross-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1rem;
+  height: 1rem;
+  color: #f43f5e;
+}
+
+/* Glow ring */
+.knob-glow-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 0.3s ease;
+}
+
+.dial-container:hover .knob-glow-ring,
+.dial-container.dragging .knob-glow-ring {
+  opacity: 0.25;
+}
+
+.knob-percent-label {
+  margin-top: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.025em;
+  color: var(--color-zinc-200);
+  transition: color 0.15s ease;
+}
+
+.knob-percent-label.is-muted {
+  color: var(--color-zinc-500);
+  text-decoration: line-through;
+}
+
+/* ========================================================================= */
+/* DOWNLOAD CTA                                                              */
+/* ========================================================================= */
+.download-cta-block {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+}
+
+.download-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 2.5rem;
+  background-color: #000;
+  color: var(--color-gold-accent);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15), 0 16px 36px -6px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .download-btn {
+    padding: 0.875rem 3.5rem;
+    font-size: 1.125rem;
+  }
+}
+
+.download-btn:hover {
+  background-color: var(--color-zinc-900);
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35), 0 20px 45px -5px rgba(0, 0, 0, 0.6);
+}
+
+.download-btn:active {
+  transform: scale(0.95);
+}
+
+.download-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-gold-accent);
+  transition: transform 0.2s ease;
+}
+
+.download-btn:hover .download-icon {
+  transform: translateY(2px);
+}
+
+.download-version-text {
+  margin-top: 0.875rem;
+  font-size: 0.75rem;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 640px) {
+  .download-version-text {
+    font-size: 0.875rem;
+  }
+}
+
+.download-platform-text {
+  margin-top: 0.625rem;
+  font-size: 0.75rem;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .download-platform-text {
+    font-size: 0.875rem;
+  }
+}
+
+.windows-logo-btn {
+  margin-top: 0.625rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375rem;
+  transition: transform 0.2s ease;
+}
+
+.windows-logo-btn:hover {
+  transform: scale(1.1);
+}
+
+.windows-logo-btn:active {
+  transform: scale(0.95);
+}
+
+.windows-logo-svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #000;
+  transition: color 0.15s ease;
+}
+
+.windows-logo-btn:hover .windows-logo-svg {
+  color: var(--color-zinc-800);
+}
+
+.hero-description {
+  color: var(--color-zinc-800);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.625;
+  text-align: center;
+  max-width: 36rem;
+  margin: 2rem auto 0.5rem auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-description {
+    font-size: 15px;
+  }
+}
+
+/* ========================================================================= */
+/* SECTION 2: COMO INSTALAR (PARTE PRETA #000000)                           */
+/* ========================================================================= */
+.install-section {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-zinc-300);
+  padding: 4rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 640px) {
+  .install-section {
+    padding: 6rem 1.5rem;
+  }
+}
+
+.install-container {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+.install-header {
+  margin-bottom: 2rem;
+}
+
+.install-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-accent);
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .install-title {
+    font-size: 0.875rem;
+  }
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--color-zinc-300);
+  font-size: 13.5px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.step-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-gold-accent);
+  padding-top: 0.125rem;
+  user-select: none;
+  font-weight: 600;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-sublist {
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.10);
+  color: var(--color-zinc-400);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.code-badge {
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-zinc-200);
+}
+
+.code-badge-gold {
+  color: var(--color-gold-accent);
+}
+
+.strong-label {
+  color: var(--color-zinc-200);
+  font-weight: 500;
+}
+
+.disclaimer-box {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  color: var(--color-zinc-400);
+  font-size: 0.75rem;
+  line-height: 1.625;
+}
+
+/* ========================================================================= */
+/* TOAST NOTIFICATION                                                        */
+/* ========================================================================= */
+.toast-notice {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-zinc-900);
+  border: 1px solid rgba(222, 201, 138, 0.3);
+  border-radius: 9999px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  font-size: 0.75rem;
+  color: var(--color-zinc-200);
+  animation: toastFadeIn 0.25s ease-out forwards;
+}
+
+.toast-notice.hide {
+  animation: toastFadeOut 0.25s ease-in forwards;
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes toastFadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}
+
+.toast-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--color-gold-accent);
+}
+
+.download-link {
+  color: #94ddbc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ========================================================================= */
+/* SCREENSHOTS THUMBNAILS (ABAIXO DO LOGO DO WINDOWS)                        */
+/* ========================================================================= */
+.app-screenshots-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.screenshot-thumb-btn {
+  position: relative;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  line-height: 0;
+}
+
+.screenshot-thumb-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.45);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.screenshot-thumb-btn:active {
+  transform: scale(0.98);
+}
+
+.screenshot-thumb-img {
+  width: 130px;
+  height: 78px;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (min-width: 640px) {
+  .screenshot-thumb-img {
+    width: 150px;
+    height: 90px;
+  }
+}
+
+.screenshot-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--color-gold-accent);
+}
+
+.screenshot-thumb-btn:hover .screenshot-zoom-overlay {
+  opacity: 1;
+}
+
+.zoom-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* ========================================================================= */
+/* MODAL FULLSCREEN (LIGHTBOX)                                               */
+/* ========================================================================= */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.image-modal-content {
+  position: relative;
+  z-index: 10;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.image-modal-img {
+  max-width: 100%;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform: scale(0.94);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-modal.active .image-modal-img {
+  transform: scale(1);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.image-modal-close svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.image-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+.image-modal-close:active {
+  transform: scale(0.95);
+}
